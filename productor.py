@@ -2,7 +2,6 @@
 # By Ed Scrimaglia
 
 import pika
-import os
 import subprocess
 
 def publish_message(message, queue_name='cola_test', host='localhost'):
