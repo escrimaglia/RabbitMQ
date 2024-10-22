@@ -16,9 +16,9 @@ rabbitmq:management: imagen oficial de rabbitq
 
 http://localhost:15672
 
-RabbitMQ viene con credenciales por defecto para la interfaz de gestión:
+Credenciales por defecto para acceder al portal de gestión:
 
-Usuario: guest
+Usuario: guest  
 Contraseña: guest
 
 ### Ejecutar el consumidor en una ventana
