@@ -2,6 +2,10 @@
 
 ## Implementación del patrón Productor/Consumidor en Python 3.12
 
+RabbitMQ es uno de los Messsage Brokers mas conocidos para la implementación del patrón Productor/Consumidor.
+
+Otros son Kafka, Reddis, ActiveMQ, Python Message Service, etc
+
 ### Ejecutar el siguiente comando para crear el contenedor (requiere docker y la libreria pika instalados)
 
 docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management
