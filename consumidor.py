@@ -8,19 +8,15 @@ def callback(ch, method, properties, body):
 
 def consume_messages():
     try:
-        # Establece onexión con RabbitMQ
         connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
         channel = connection.channel()
 
-        # Declara una cola (debe ser la misma que el publisher)
         channel.queue_declare(queue='cola_test')
 
-        # Configura el consumidor para leer de la cola
         channel.basic_consume(queue='cola_test', on_message_callback=callback, auto_ack=True)
 
         print(' [*] Leyendo cola en RabbitMQ. To exit press CTRL+C')
         
-        # Empieza a consumir mensajes
         channel.start_consuming()
     except (Exception, KeyboardInterrupt) as err:
         print (err)

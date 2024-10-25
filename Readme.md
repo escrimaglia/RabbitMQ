@@ -1,34 +1,35 @@
-# RabbitMQ en Docker
+# RabbitMQ on Docker
 
-## Implementación del patrón Productor/Consumidor en Python 3.12
+## Implementing the Producer/Consumer Pattern in Python 3.12
 
-RabbitMQ es uno de los Messsage Brokers mas conocidos para la implementación del patrón Productor/Consumidor.
+RabbitMQ is one of the most well-known message brokers for implementing the Producer/Consumer pattern.
 
-Otros son Kafka, Reddis, ActiveMQ, Python Message Service, etc
+Others include Kafka, Redis, ActiveMQ, Python Message Service, etc.
 
-### Ejecutar el siguiente comando para crear el contenedor (requiere docker y la libreria pika instalados)
+### Run the following command to create the container (requires Docker and the Pika library to be installed)
 
 docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management
 
--d: Ejecuta el contenedor en segundo plano (detached).
---name rabbitmq: Nombra el contenedor como rabbitmq para que sea fácil identificarlo.
--p 5672:5672: Expone el puerto estándar de RabbitMQ para el protocolo AMQP (puerto de mensajería).
--p 15672:15672: Expone el puerto 15672 para la interfaz web de gestión de RabbitMQ.
-rabbitmq:management: imagen oficial de rabbitq
+- `-d`: Runs the container in detached mode (in the background).
+- `--name rabbitmq`: Names the container "rabbitmq" for easy identification.
+- `-p 5672:5672`: Exposes RabbitMQ's standard port for the AMQP protocol (messaging port).
+- `-p 15672:15672`: Exposes port 15672 for RabbitMQ's web management interface.
+- `rabbitmq:management`: Official RabbitMQ image.
 
-### Acceder el portal de gestion RabbitMQ
+### Access the RabbitMQ Management Portal
 
-http://localhost:15672
+Visit: [http://localhost:15672](http://localhost:15672)
 
-Credenciales por defecto para acceder al portal de gestión:
+Default credentials to log into the management portal:
 
-Usuario: guest  
-Contraseña: guest
+- Username: guest  
+- Password: guest
 
-### Ejecutar el consumidor en una ventana
+### Run the Consumer in One Terminal
 
 python3 consumidor.py
 
-### Ejecutar el prductor en otra ventana
+
+### Run the Producer in Another Terminal
 
 python3 productor.py
